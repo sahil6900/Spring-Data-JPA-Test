@@ -1,5 +1,6 @@
 package com.springdatajpa.demo.serviceImpl;
 
+import com.springdatajpa.demo.exceptionhandling.ResourceNotFound;
 import com.springdatajpa.demo.entity.Student;
 import com.springdatajpa.demo.repo.studentRepo;
 import com.springdatajpa.demo.service.studentService;
@@ -24,7 +25,7 @@ public class studentServiceImpl implements studentService {
 
     @Override
     public Student getStudent (int id) {
-        Student student = this.studentRepo.findById (id).orElseThrow (() -> new RuntimeException ("No student found with given id " + id));
+        Student student = this.studentRepo.findById (id).orElseThrow (() -> new ResourceNotFound ("Student","StudentId",id));
         return student;
     }
 

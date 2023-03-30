@@ -21,8 +21,9 @@ public class CourseMaterial {
     private int courseMaterialId;
     private String url;
 
-    @OneToOne(
-            mappedBy = "courseMaterial"
-    )
-    private Course course;
+//    @OneToOne(
+//            fetch = FetchType.EAGER,
+//            mappedBy = "courseMaterial"
+//    )
+//    private Course course;
 }

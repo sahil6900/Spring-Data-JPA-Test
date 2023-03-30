@@ -1,7 +1,6 @@
 package com.springdatajpa.demo.controller;
 
 import com.springdatajpa.demo.entity.Course;
-import com.springdatajpa.demo.entity.Student;
 import com.springdatajpa.demo.service.courseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,5 +29,13 @@ public class courseController {
                 this.courseService.getStudentByCourseTitle (name);
 
         return new ResponseEntity<List<String>> (allStudentsByCourseName,HttpStatus.OK);
+    }
+
+    @GetMapping("/get/coursebyId/{id}")
+    public ResponseEntity<Course> getCourse(@PathVariable Integer id){
+        Course course = this.courseService.getCourseById (id);
+
+        System.out.println (course);
+        return new ResponseEntity<Course> (course,HttpStatus.OK);
     }
 }

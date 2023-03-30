@@ -16,6 +16,6 @@ spring:
     username: root
     password: 112296root
 
-logging:
-  level:
-    web: trace
+#logging:
+#  level:
+#    web: trace

@@ -1,7 +1,7 @@
 package com.springdatajpa.demo.serviceImpl;
 
 import com.springdatajpa.demo.entity.Course;
-import com.springdatajpa.demo.entity.Student;
+import com.springdatajpa.demo.exceptionhandling.ResourceNotFound;
 import com.springdatajpa.demo.repo.courseRepo;
 import com.springdatajpa.demo.service.courseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +27,9 @@ public class courseServiceImpl implements courseService {
     }
 
     @Override
-    public Course getCourse (int id) {
-        return null;
+    public Course getCourseById (Integer id) {
+        Course course = this.courseRepo.findById (id).orElseThrow (()->new ResourceNotFound ("Course","CourseId",id));
+        return course;
     }
 
     @Override

@@ -34,7 +34,7 @@ public class studentController {
     public ResponseEntity<Student> updateStudent(@PathVariable Integer id,@RequestBody Student student){
         Student student1 = this.studentService.updateStudent (id , student);
 
-        return new ResponseEntity<Student> (student1,HttpStatus.OK);
+        return new ResponseEntity<Student> (student1,HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @GetMapping("/all/students")
