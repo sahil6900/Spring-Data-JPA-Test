@@ -1,7 +1,6 @@
 package com.springdatajpa.demo.service;
 
 import com.springdatajpa.demo.entity.Course;
-import com.springdatajpa.demo.entity.Student;
 
 import java.util.List;
 
@@ -10,7 +9,7 @@ public interface courseService {
 
     public Course updateCourse(int id,Course course);
 
-    public Course getCourse(int id);
+    public Course getCourseById(Integer id);
 
     public List<Course> getAllCourses();
 
