@@ -1,0 +1,21 @@
+server:
+  port: 7777
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dbtest
+    username: root
+    password: 112296root
+
+logging:
+  level:
+    web: trace
